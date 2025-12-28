@@ -24,6 +24,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
             throws Exception {
         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
                 ex.getMessage(), request.getDescription(false));
+   System.out.println("Exception class");
 
         return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 
